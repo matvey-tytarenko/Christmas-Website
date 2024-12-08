@@ -2,7 +2,6 @@ const nodemailer = require("nodemailer");
 require("dotenv").config();
 
 // JSON READ
-
 module.exports.GetMail = async (req, res) => {
   const { email, name } = req.body;
 
