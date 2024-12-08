@@ -32,12 +32,13 @@ header ul {
 }
 
 header ul li {
-  padding-left: 20px;
+  padding-left: 25px;
   font-size: 1.2rem;
 }
 
 header ul li a {
   color: #fff;
+  padding-left: 15px;
 }
 
 header ul li a:hover {
