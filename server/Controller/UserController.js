@@ -30,7 +30,7 @@ module.exports.GetMail = async (req, res) => {
         return res.status(400).json({ msg: "Email Error!", status: false });
       } else {
         console.log(`Email sent!`);
-        res.status(200).json({ msg: "Congratulation was sent!", status: true });
+        return res.status(200).json({ msg: "Congratulation was sent!", status: true });
       }
     });
   } catch (error) {
