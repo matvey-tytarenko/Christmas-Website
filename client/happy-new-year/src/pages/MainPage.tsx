@@ -13,8 +13,8 @@ function MainPage() {
 
   return (
     <div className="container">
-      <Header />
       <Snowfall />
+      <Header />
       <div className="title">
         <h1>С Новым Годом!</h1>
       </div>
