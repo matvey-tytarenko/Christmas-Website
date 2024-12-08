@@ -164,4 +164,10 @@ header {
             padding-top: 90px;
         }
     }
+
+    @media (max-height: 844px) {
+        h1 {
+            padding-top: 5px;
+        }
+    }
 }

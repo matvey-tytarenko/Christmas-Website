@@ -161,3 +161,9 @@ header ul li a:hover {
     padding-top: 90px;
   }
 }
+
+@media (max-height: 844px) {
+  .container h1 {
+    padding-top: 5px;
+  }
+}
