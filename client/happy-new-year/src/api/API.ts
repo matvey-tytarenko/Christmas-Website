@@ -1,4 +1,4 @@
 const server =
-  "https://christmas-website-server.vercel.app/?vercelToolbarCode=ruTQ0lMOUh68Lkj/api/congratulation";
+  "http://localhost:5000/api/congratulation";
 
 export default server;
