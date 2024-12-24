@@ -43,7 +43,7 @@ function MailPage() {
       toast.error("пожалуйста введите email", ToastOpt);
       return false;
     } else if (email.indexOf("@") === -1) {
-      toast.error("не корректный Email");
+      toast.error("не корректный Email", ToastOpt);
       return false;
     } else if (name.length < 4) {
       toast.error("имя слишком короткое", ToastOpt);
