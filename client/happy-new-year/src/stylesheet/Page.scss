@@ -4,6 +4,8 @@
 :root {
     --bg-night-sky: #001f3f;
     --primary-color: #0068e6;
+    --hradient: linear-gradient(90deg, rgba(0,134,255,1) 0%, rgba(0,31,255,1) 35%, rgba(9,0,20,1) 100%);
+    --gradient: linear-gradient(90deg, rgb(0, 97, 181) 0%, rgb(0, 113, 147) 35%, rgb(13, 0, 160) 100%);
 }
 
 * {
@@ -22,7 +24,7 @@ header {
     left: 0;
     width: 100%;
     height: 57px;
-    background: var(--primary-color);
+    background: var(--hradient);
 
     ul {
         display: flex;
@@ -37,10 +39,10 @@ header {
             a {
                 color: #fff;
                 padding-left: 15px;
-                
+                transition: all 0.3s ease;
                 &:hover {
                     font-size: 1.4rem;
-                    color: aquamarine;
+                    color: rgb(82, 123, 255);
                 }
             }
         }
@@ -71,7 +73,7 @@ header {
     width: 100vw;
     margin: 0;
     padding: 0;
-    background: var(--bg-night-sky);
+    background: var(--gradient);
 
     .christmas-tree {
         width: 30vw;

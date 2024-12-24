@@ -13,7 +13,7 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   background-color: var(--bg-night-sky);
 }
 
@@ -33,9 +33,10 @@ body {
   flex-direction: column;
   gap: 2rem;
   padding: 3rem 5rem;
-  background: #277acd;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: rgba(39, 122, 205, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   position: relative;
   width: 50%;
   max-width: 600px;
@@ -50,24 +51,36 @@ body {
   position: relative;
   top: -20px;
   text-align: center;
-  font-family: 'Rubik Bubbles', cursive;
+  font-family: "Rubik Bubbles", cursive;
   font-size: 2rem;
   color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .container form input {
-  background: #050063;
+  background: rgba(5, 0, 99, 0.3);
   padding: 0.5rem;
-  border: 0.1rem solid #050063;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
   text-align: center;
   outline: none;
   border-radius: 0.4rem;
   font-size: 1.3rem;
 }
 
+.container form input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
 .container form button {
-  background: #050063;
-  border: 2px solid #001f3f;
+  background: rgba(5, 0, 99, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+.container form button:hover {
+  background: rgba(5, 0, 99, 0.7);
 }
 
 .container form button i {
