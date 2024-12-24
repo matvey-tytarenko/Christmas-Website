@@ -23,8 +23,13 @@ function MailPage() {
     event.preventDefault();
     if(handleValidation()) {
       const {name, email} = values;
-      toast.info("ваше поздравление отправлено вам на почту", ToastOpt);
-      await axios.post(server, {name, email});
+      try {
+        toast.info("ваше поздравление отправлено вам на почту", ToastOpt);
+        await axios.post(server, { name, email });
+      } catch (err) {
+        console.error(`Server Error: ${err}`);
+        toast.error("Произошла ошибка при отправке поздравления", ToastOpt);
+      }
     }
   };
 
