@@ -9,7 +9,7 @@ app.use(cors());
 app.use("/api", router);
 
 app.get("/", (req, res) => {
-  res.status(200).json({ msg: "Server is running!" });
+  return res.status(200).json({ msg: "Server is running!" });
 });
 
 module.exports = app;
