@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import Header from "../components/Header";
 import "../stylesheet/mail.scss";
 import { ToastContainer, toast } from "react-toastify";
-import axios from 'axios'
-import server from '../api/API'
+import axios from "axios";
+import server from "../api/API";
 
 function MailPage() {
   const [values, SetValues] = useState({
@@ -21,8 +21,8 @@ function MailPage() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    if(handleValidation()) {
-      const {name, email} = values;
+    if (handleValidation()) {
+      const { name, email } = values;
       try {
         toast.info("ваше поздравление отправлено вам на почту", ToastOpt);
         await axios.post(server, { name, email });
@@ -78,7 +78,7 @@ function MailPage() {
           <div className="input email">
             <label htmlFor="email">Email*:</label>
             <input
-              type="email"
+              type="text"
               name="email"
               id="email"
               placeholder="doe.jhon@example.com"
