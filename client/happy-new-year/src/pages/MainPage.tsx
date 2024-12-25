@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../stylesheet/Page.scss";
 import { useNavigate } from "react-router-dom";
 import CristmasTree from "../assets/Christmas Tree.png";
@@ -10,24 +10,20 @@ import "react-toastify/dist/ReactToastify.css";
 
 function MainPage() {
   const navigate = useNavigate();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
 
   useEffect(() => {
-    // Проверяем, показывалось ли уже модальное окно
-    const modalShown = localStorage.getItem("modalShown");
-
-    if (!modalShown) {
-      // Показываем модальное окно
-      Modal();
-      // Сохраняем информацию о показе
-      localStorage.setItem("modalShown", "true");
-    }
-  }, []);
+    setIsModalOpen(true);
+  }, [])
 
   return (
     <div className="container">
       <Snowfall />
       <Header />
       <ToastContainer />
+
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       <div className="title">
         <h1>С Новым Годом!</h1>
       </div>

