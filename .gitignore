@@ -1,3 +1,4 @@
 config.py
 setup.py
 *__pycache__
+compile.py
