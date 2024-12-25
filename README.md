@@ -1,6 +1,4 @@
 # Happy New Year
-## [Link To Website](https://christmas-website-client.vercel.app)
-
 # How To run server
 
 ```bash
