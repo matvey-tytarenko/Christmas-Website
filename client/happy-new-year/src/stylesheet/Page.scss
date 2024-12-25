@@ -16,24 +16,24 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    overflow-x: hidden; // Предотвращаем горизонтальную прокрутку
+    overflow-x: hidden;
 }
 
 header {
-    position: fixed; // Изменено с absolute на fixed для лучшей поддержки мобильных
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 57px;
     background: var(--hradient);
-    z-index: 1000; // Добавлен z-index чтобы header был поверх остального контента
+    z-index: 1000;
 
     ul {
         display: flex;
         align-items: center;
         justify-content: center;
         padding-top: 12px;
-        list-style: none; // Добавлено для удаления маркеров списка
+        list-style: none;
 
         li {
             padding-left: 25px;
@@ -42,8 +42,9 @@ header {
             a {
                 color: #fff;
                 padding-left: 15px;
-                text-decoration: none; // Добавлено для удаления подчеркивания ссылок
+                text-decoration: none;
                 transition: all 0.3s ease;
+                
                 &:hover {
                     font-size: 1.4rem;
                     color: rgb(82, 123, 255);
@@ -51,8 +52,84 @@ header {
             }
         }
     }
+}
 
-    @media (max-width: 768px) {
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 57px 0 0 0;
+    background: var(--gradient);
+    position: relative;
+
+    .christmas-tree {
+        width: 30vw;
+        max-width: 500px;
+        position: fixed;
+        bottom: -22px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+    }
+
+    .title {
+        width: 80%;
+        max-width: 700px;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        top: 25%;
+        padding: 1rem;
+        text-align: center;
+        font-size: 1.5rem;
+        color: #fff;
+
+        h1 {
+            font-size: 45px;
+            font-family: 'Rubik Bubbles', sans-serif;
+            margin-bottom: 1rem;
+        }
+    }
+
+    .button {
+        position: absolute;
+        top: 37%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+
+        button {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            background: var(--primary-color);
+            color: white;
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+
+            &:hover {
+                transform: scale(1.05);
+                background: lighten(#0068e6, 10%);
+            }
+
+            &:active {
+                transform: scale(0.95);
+            }
+        }
+    }
+}
+
+// Медиа-запросы
+@media (max-width: 768px) {
+    header {
         height: 50px;
         
         ul {
@@ -73,106 +150,7 @@ header {
         }
     }
 
-    @media (max-width: 480px) {
-        height: 45px;
-        
-        ul li {
-            padding-left: 5px;
-            font-size: 0.8rem;
-            
-            a {
-                padding-left: 5px;
-            }
-        }
-    }
-}
-
-.container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh; // Изменено с height на min-height
-    width: 100%;
-    margin: 0;
-    padding: 57px 0 0 0; // Добавлен отступ сверху равный высоте header
-    background: var(--gradient);
-    position: relative; // Добавлено для правильного позиционирования дочерних элементов
-
-    .christmas-tree {
-        width: 30vw;
-        max-width: 500px;
-        position: fixed;
-        bottom: -22px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 1; // Добавлен z-index
-    }
-
-    .title {
-        width: 80%;
-        max-width: 700px;
-        position: absolute;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column; // Добавлено для лучшей организации контента
-        top: 25%;
-        padding: 1rem;
-        text-align: center;
-        font-size: 1.5rem;
-        color: #fff;
-
-        h1 {
-            font-size: 45px;
-            font-family: 'Rubik Bubbles', sans-serif;
-            margin-bottom: 1rem; // Добавлен отступ снизу
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 32px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 24px;
-            }
-        }
-    }
-
-    .button {
-        position: absolute;
-        top: 37%;
-        left: 50%; // Центрирование кнопки
-        transform: translate(-50%, -50%);
-        z-index: 2; // Добавлен z-index
-
-        button {
-            background: var(--primary-color);
-            padding: 0.75rem 1.5rem;
-            font-size: 1rem;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2); // Добавлена тень
-
-            &:hover {
-                background: aquamarine;
-                color: var(--bg-night-sky);
-                transform: scale(1.05); // Добавлен эффект увеличения при наведении
-            }
-
-            &:active {
-                transform: scale(0.95); // Эффект нажатия
-            }
-        }
-    }
-
-    // Медиа-запросы для планшетов
-    @media (max-width: 768px) {
+    .container {
         padding-top: 50px;
 
         .christmas-tree {
@@ -185,20 +163,38 @@ header {
             width: 95%;
             padding: 0.5rem;
             font-size: 1.2rem;
+
+            h1 {
+                font-size: 32px;
+            }
         }
 
         .button {
-            top: 35%;
-
+            top: 45%;
+            
             button {
                 font-size: 0.9rem;
-                padding: 0.6rem 1.2rem;
+                padding: 10px 25px;
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        height: 45px;
+        
+        ul li {
+            padding-left: 5px;
+            font-size: 0.8rem;
+            
+            a {
+                padding-left: 5px;
             }
         }
     }
 
-    // Медиа-запросы для мобильных устройств
-    @media (max-width: 480px) {
+    .container {
         padding-top: 45px;
 
         .christmas-tree {
@@ -209,79 +205,46 @@ header {
         .title {
             top: 15%;
             font-size: 1rem;
-            padding: 0.75rem;
+            
+            h1 {
+                font-size: 24px;
+            }
         }
 
         .button {
             top: 40%;
-
+            
             button {
                 font-size: 0.8rem;
-                padding: 0.5rem 1rem;
+                padding: 8px 20px;
             }
         }
     }
-
-    // Медиа-запросы для маленьких мобильных устройств
-    @media (max-width: 320px) {
-        .christmas-tree {
-            width: 90vw;
-        }
-
-        .title {
-            top: 12%;
-            padding: 0.5rem;
-        }
-
-        .button {
-            top: 35%;
-        }
-    }
-
-    // Медиа-запросы для различных высот экрана
-    @media (max-height: 600px) {
-        .title {
-            top: 20%;
-        }
-
-        .button {
-            top: 50%;
-        }
-
-        .christmas-tree {
-            bottom: -10px;
-            width: 50vw;
-        }
-    }
-
-    // Медиа-запросы для ландшафтной ориентации
-    @media (orientation: landscape) and (max-height: 500px) {
-        .title {
-            top: 25%;
-        }
-
-        .button {
-            top: 60%;
-        }
-
-        .christmas-tree {
-            width: 40vw;
-        }
-    }
 }
 
-// Добавляем плавную анимацию для всех переходов
-* {
-    transition: all 0.3s ease-in-out;
-}
-
-// ... existing code remains the same until media queries ...
-
-// Специальные медиа-запросы для iPhone 13 Pro Max
-@media screen and (device-width: 428px) and (device-height: 926px),
-       screen and (max-width: 428px) {
+// Поддержка Safe Area для iOS
+@supports (padding: max(0px)) {
     header {
-        height: 60px; // Увеличенная высота для удобства
+        padding-top: env(safe-area-inset-top);
+        height: calc(57px + env(safe-area-inset-top));
+    }
+
+    .container {
+        padding-top: calc(57px + env(safe-area-inset-top));
+        padding-bottom: env(safe-area-inset-bottom);
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
+    }
+}
+
+@media only screen 
+    and (device-width: 428px) 
+    and (device-height: 926px) 
+    and (-webkit-device-pixel-ratio: 3),
+    screen and (max-width: 428px) {
+    
+    header {
+        height: 60px;
         
         ul {
             padding-top: 15px;
@@ -305,102 +268,34 @@ header {
         padding-top: 60px;
 
         .christmas-tree {
-            width: 85vw; // Оптимизированный размер для iPhone 13 Pro Max
-            bottom: -15px;
+            width: 85vw;
             max-width: 400px;
+            bottom: -15px;
         }
 
         .title {
-            top: 18%;
+            top: 10%;
             width: 90%;
             padding: 1rem;
             
             h1 {
-                font-size: 2rem; // Увеличенный размер шрифта
+                font-size: 2.5rem; // 40px
                 margin-bottom: 1.5rem;
-            }
-            
-            p {
-                font-size: 1.1rem;
-                line-height: 1.5;
-                margin-bottom: 1rem;
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
             }
         }
 
         .button {
-            top: 42%;
+            top: 37%;
+            width: 90%;
+            max-width: 400px;
             
             button {
-                padding: 1rem 2rem; // Увеличенные отступы для удобства нажатия
-                font-size: 1.1rem;
-                border-radius: 10px; // Более закругленные углы
-                
-                &:hover {
-                    transform: scale(1.02);
-                }
-                
-                &:active {
-                    transform: scale(0.98);
-                }
-            }
-        }
-    }
-
-    // Оптимизация для ландшафтной ориентации iPhone 13 Pro Max
-    @media (orientation: landscape) {
-        .container {
-            .christmas-tree {
-                width: 45vw;
-                bottom: -20px;
-            }
-
-            .title {
-                top: 15%;
-                
-                h1 {
-                    font-size: 1.8rem;
-                }
-            }
-
-            .button {
-                top: 65%;
-            }
-        }
-    }
-
-    // Дополнительные настройки для режима Safe Area
-    @supports (padding: max(0px)) {
-        header {
-            padding-top: env(safe-area-inset-top);
-            height: calc(60px + env(safe-area-inset-top));
-        }
-
-        .container {
-            padding-top: calc(60px + env(safe-area-inset-top));
-            padding-bottom: env(safe-area-inset-bottom);
-            padding-left: env(safe-area-inset-left);
-            padding-right: env(safe-area-inset-right);
-        }
-    }
-}
-
-// Дополнительные оптимизации для устройств с высоким DPI
-@media (-webkit-min-device-pixel-ratio: 3) {
-    .container {
-        .button button {
-            -webkit-tap-highlight-color: transparent; // Убираем подсветку при тапе
-        }
-    }
-}
-
-// Оптимизации для темного режима
-@media (prefers-color-scheme: dark) {
-    .container {
-        .button button {
-            background: var(--primary-color);
-            
-            &:hover {
-                background: darken(aquamarine, 10%);
+                width: 100%;
+                padding: 15px 30px;
+                font-size: 1.0rem;
+                border-radius: 12px;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.2);
             }
         }
     }
